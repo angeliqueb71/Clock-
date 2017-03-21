@@ -1,0 +1,30 @@
+body {
+  border: 12px solid black;
+  background-color: olive;
+  /*background-image: url(http://analog.onlineclock.net/analog-clock-face.jpg);*/
+  background-repeat: space;
+
+}
+
+.clock {
+  font-size: 150px;
+  color: white;
+  border-color: black;
+  /*background-color: olive;*/
+  width: 80%px;
+  height: 65px:px;
+  margin: 5% auto;
+  padding-left: 100px;
+  font-family: 'Abril Fatface', cursive;
+}
+#hr {
+  margin-left: 32%
+}
+.greet {
+  text-align: center;
+  font-size: 50px;
+}
+.close {
+  text-align: center;
+  font-size: 45px;
+}
