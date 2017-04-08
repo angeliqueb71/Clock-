@@ -1,30 +1,25 @@
 body {
-  border: 12px solid black;
-  background-color: olive;
-  /*background-image: url(http://analog.onlineclock.net/analog-clock-face.jpg);*/
-  background-repeat: space;
+  background-image: url(http://www.clipartbest.com/cliparts/4T9/oj4/4T9oj4Rqc.jpg);
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding: 240px
 
 }
 
-.clock {
-  font-size: 150px;
-  color: white;
+#clock {
+  font-size: 100px;
+  color: black;
   border-color: black;
-  /*background-color: olive;*/
   width: 80%px;
-  height: 65px:px;
-  margin: 5% auto;
-  padding-left: 100px;
+  height: 100px:px;
+  /*margin: 5% auto;
+  padding-left: 100px;*/
   font-family: 'Abril Fatface', cursive;
 }
-#hr {
-  margin-left: 32%
-}
-.greet {
-  text-align: center;
-  font-size: 50px;
-}
-.close {
-  text-align: center;
-  font-size: 45px;
+
+#date, #time {
+  font-size: 40px;
+
 }

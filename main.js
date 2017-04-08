@@ -1,48 +1,38 @@
-setInterval(function () {
-  var date = new Date ()
-  var hr = date.getHours()
-  var mm = date.getMinutes()
-  var sec = date.getSeconds()
+///digital time
+window.onload = setInterval(clock,1000);
+
+    function clock() {
+    // setting the date
+	  var d = new Date();
+	  var date = d.getDate();
+
+	  var month = d.getMonth();
+	  var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+	  month=montharr[month];
+
+	  var year = d.getFullYear();
+
+	  var day = d.getDay();
+	  var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+	  day=dayarr[day];
+
+    ///seting the time
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+
+	  document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
+	  document.getElementById("clock").innerHTML = t;
+    }
 
 
-  if (hr < 13){
-    console.log ("Good Morning Sunshine");
-  }else {
-    console.log ("Good Night");
-  }
+    //changing color for every second
+    var myVar = setInterval(function(){ setColor() }, 1000);
 
-  var greet = document.querySelector(".greet")
-  greet.innerHTML  = ("Good Morning Sunshine")
+    function setColor() {
+      var x = document.body;
+      x.style.backgroundColor = x.style.backgroundColor == "gray" ? "black" : "gray";
+    }
 
-  var close = document.querySelector(".close")
-  close.innerHTML  = ("Good Night!")
-
-
-  var hourElement = document.getElementById("hr")
-  hourElement.innerHTML  = hr
-
-  var minutesElement = document.getElementById("mm")
-  minutesElement.innerHTML  = mm
-
-  var secondsElement = document.getElementById("sec")
-  secondsElement.innerHTML  = sec
-
-}, 1000);
-
-// body.getElementsById("mm")
-// body.getElementsById("sec")
-
-
-//this var is connecting html is telling js what
-//note to self
-//error - should - element.addEventListener
-//didnt have have click
-
-//  var hour = document.getElementById("hr");
-//  .addEventListener("click",function() {
-//  hour.innerText = hr;
-//  var hour = document.getElementById("mm");
-//  hour.innerText = mm;
-//  var hour = document.getElementById("sec");
-//  hour.innerText = sec;
-//
+    function stopColor() {
+      clearInterval(myVar);
+    }
