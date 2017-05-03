@@ -1,38 +1,33 @@
 ///digital time
-window.onload = setInterval(clock,1000);
 
-    function clock() {
-    // setting the date
-	  var d = new Date();
-	  var date = d.getDate();
+var clock = document.getElementById('clock');
+var hexColor = document.getElementById('hex-color');
 
-	  var month = d.getMonth();
-	  var montharr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
-	  month=montharr[month];
+function hexClock() {
+  var time = new Date();
+  var hours = time.getHours().toString();
+  var minutes = time.getMinutes().toString();
+  var seconds = time.getSeconds().toString();
 
-	  var year = d.getFullYear();
+  if (hours.length < 2) {
+    hours = '0' + hours;
+  }
 
-	  var day = d.getDay();
-	  var dayarr =["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
-	  day=dayarr[day];
+  if (minutes.length < 2) {
+    minutes = '0' + minutes;
+  }
 
-    ///seting the time
-    var d = new Date();
-    var t = d.toLocaleTimeString();
+  if (seconds.length < 2) {
+    seconds = '0' + seconds;
+  }
 
-	  document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
-	  document.getElementById("clock").innerHTML = t;
-    }
+  var clockStr = hours + ' : ' + minutes + ' : ' + seconds;
+  var hexColorStr = '#' + hours + minutes + seconds;
 
+  clock.textContent = clockStr;
+  hexColor.textContent = hexColorStr;
+  document.body.style.backgroundColor = hexColorStr;
+}
 
-    //changing color for every second
-    var myVar = setInterval(function(){ setColor() }, 1000);
-
-    function setColor() {
-      var x = document.body;
-      x.style.backgroundColor = x.style.backgroundColor == "gray" ? "black" : "gray";
-    }
-
-    function stopColor() {
-      clearInterval(myVar);
-    }
+hexClock();
+setInterval(hexClock, 1000);
